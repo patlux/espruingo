@@ -242,7 +242,7 @@ func loadModules(script string) string {
 func minifyScript(script string) string {
 	m := minify.New()
 	m.AddFunc("text/javascript", js.Minify)
-	miny, err := minify.String(m, "text/javascript", script)
+	miny, err := m.String("text/javascript", script)
 	if err != nil {
 		log.Fatal("minify.String:", err)
 	}
